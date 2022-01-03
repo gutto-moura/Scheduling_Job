@@ -5,22 +5,32 @@ var listJobs = [
 {
 "ID": 1,
 "Descricao": "Importação de arquivos de fundos",
-"Data Máxima de conclusão": "2019-11-10 12:00:00",
-"Tempo estimado": 2,
+"DataConclusao": "2019-11-10 12:00:00",
+"TempoEstimado": 2,
 },
 {
 "ID": 2,
 "Descricao": "Importação de dados da Base Legada",
-"Data Máxima de conclusão": "2019-11-11 12:00:00",
-"Tempo estimado": 4,
+"DataConclusao": "2019-11-11 12:00:00",
+"TempoEstimado": 4,
 },
 {
 "ID": 3,
 "Descricao": "Importação de dados de integração",
-"Data Máxima de conclusão": "2019-11-11 08:00:00",
-"Tempo estimado": 6,
+"DataConclusao": "2019-11-11 08:00:00",
+"TempoEstimado": 6,
 },
 ];
 
 //VERIFICAR AS INFORMAÇÕES DO ARRAY
 console.log(listJobs[0]);
+
+//DECLARANDO AS DATAS DA JANELA DE EXECUÇÃO
+const dateStart = new Date("2019-11-10 09:00:00");
+const dateEnd = new Date("2019-11-11 12:00:00");
+
+//MOSTRANDO QUAIS DATAS ESTÃO DENTRO DO PERIODO.
+ for(job of listJobs){
+     console.log(job.DataConclusao);
+     
+ }
