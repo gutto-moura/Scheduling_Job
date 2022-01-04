@@ -23,14 +23,33 @@ var listJobs = [
 ];
 
 //VERIFICAR AS INFORMAÇÕES DO ARRAY
-console.log(listJobs[0]);
+//console.log(listJobs[0]);
 
+
+var countId;
+var arrayId = [];
 //DECLARANDO AS DATAS DA JANELA DE EXECUÇÃO
 const dateStart = new Date("2019-11-10 09:00:00");
 const dateEnd = new Date("2019-11-11 12:00:00");
 
-//MOSTRANDO QUAIS DATAS ESTÃO DENTRO DO PERIODO.
+//MOSTRANDO QUAIS DATAS ESTÃO DENTRO DO PERIODO OU NÃO.
  for(job of listJobs){
      console.log(job.DataConclusao);
-     
+     if (dateStart.getTime() <= new Date(job.DataConclusao).getTime() && dateEnd.getTime() >= new Date(job.DataConclusao).getTime()) {
+        console.log('A data está dentro da janela de execução');
+    } else {
+        console.log('A data está fora da janela de execução');
+    }
  }
+
+ //ORDENANDO AS DATAS DO ANTIGO PARA O MAIS RECENTE
+ listJobs.sort((a, b) => {
+    const dateInitial = new Date(a.DataConclusao);
+          dateFinal = new Date(b.DataConclusao);
+    return dateInitial - dateFinal;
+ });
+
+ //CONSULTANDO SE O ARRAY ESTA ORDENADO DE FORMA CORRETA
+ listJobs.map((job) => {
+    return `Data da conclusão: ${job.DataConclusao} - ID: ${job.ID}`
+ })
