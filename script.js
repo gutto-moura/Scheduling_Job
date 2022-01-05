@@ -22,17 +22,17 @@ var listJobs = [
 },
 ];
 
-//VERIFICAR AS INFORMAÇÕES DO ARRAY
+//Verificar se as informações do array estão corretas
 //console.log(listJobs[0]);
 
 
 var countId;
 var arrayId = [];
-//DECLARANDO AS DATAS DA JANELA DE EXECUÇÃO
+//Declarando as datas da janela de execução.
 const dateStart = new Date("2019-11-10 09:00:00");
 const dateEnd = new Date("2019-11-11 12:00:00");
 
-//MOSTRANDO QUAIS DATAS ESTÃO DENTRO DO PERIODO OU NÃO.
+//Mostrando quais datas estão dentro do periodo ou não.
  for(job of listJobs){
      console.log(job.DataConclusao);
      if (dateStart.getTime() <= new Date(job.DataConclusao).getTime() && dateEnd.getTime() >= new Date(job.DataConclusao).getTime()) {
@@ -42,14 +42,21 @@ const dateEnd = new Date("2019-11-11 12:00:00");
     }
  }
 
- //ORDENANDO AS DATAS DO ANTIGO PARA O MAIS RECENTE
+ //Ordenando as datas do antigo para o mais recente
  listJobs.sort((a, b) => {
     const dateInitial = new Date(a.DataConclusao);
           dateFinal = new Date(b.DataConclusao);
     return dateInitial - dateFinal;
  });
 
- //CONSULTANDO SE O ARRAY ESTA ORDENADO DE FORMA CORRETA
+ //Consultando se o array está ordenado de forma correta
  listJobs.map((job) => {
     return `Data da conclusão: ${job.DataConclusao} - ID: ${job.ID}`
  })
+
+ //Mostrando os ID'S na ordem.
+ for(job of listJobs){
+   countId = countId + job.TempoEstimado;
+   arrayId[0] = job.ID;
+console.log(arrayId)
+}
